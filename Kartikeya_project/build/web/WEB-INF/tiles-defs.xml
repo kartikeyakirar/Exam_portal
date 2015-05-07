@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+ <!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+       "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+
+<!--
+     This is a blank Tiles definition file with a commented example.
+-->
+
+<tiles-definitions>
+
+    
+     <definition name="main" path="/Layout.jsp">
+        <put name="HEAD"  value="/Head.jsp" />
+        <put name="MENU" value="/Menu.jsp" />
+        <put name="BODY"   value="/Body.jsp" />
+        <put name="FOOTER" value="/Footer.jsp" />
+        
+    </definition>
+    <definition name="hjk" extends="main">
+    <put name="HEAD" value="sorry.jsp"/>    
+    </definition>
+    <definition name="tt" extends="main">
+    <put name="BODY" value="sdetails.jsp"/>    
+    </definition>
+    <definition name="1" extends="main">
+    <put name="BODY" value="help.jsp"/>    
+    </definition>
+    <definition name="2" extends="main">
+    <put name="BODY" value="desc.jsp"/>    
+    </definition>
+    <definition name="6" extends="main">
+    <put name="BODY" value="gj.jsp"/>    
+    </definition>
+    <definition name="4" extends="main">
+    <put name="BODY" value="policy.jsp"/>    
+    </definition>
+    <definition name="ex" extends="main">
+    <put name="BODY" value="examlist.jsp"/>    
+    </definition>
+    <definition name="int" extends="main">
+    <put name="BODY" value="instlist.jsp"/>    
+    </definition>
+    <definition name="stu" extends="main">
+    <put name="BODY" value="stu.jsp"/>    
+    </definition>
+    <definition name="ab" extends="main">
+    <put name="BODY" value="about.jsp"/>    
+    </definition>
+    <definition name="ct" extends="main">
+    <put name="BODY" value="cont.jsp"/>    
+    </definition>
+    <definition name="fu" extends="main">
+    <put name="BODY" value="faq.jsp"/>    
+    </definition>
+    <definition name="is" extends="main">
+    <put name="BODY" value="instsignup.jsp"/>    
+    </definition>\
+    <definition name="ins" extends="main">
+       <put name="BODY" value="instlogin.jsp"/>
+       </definition> 
+       <definition name="khk" extends="main">
+       <put name="BODY" value="afterInstLoginn.jsp"/>   
+       </definition>
+       <definition name="edet" extends="main">
+       <put name="BODY" value="edetails.jsp"/>    
+       </definition>
+       <definition name="sdet" extends="main">
+       <put name="BODY" value="sdetails.jsp"/>    
+       </definition>
+       <definition name="qdet" extends="main">
+       <put name="BODY" value="qdetails.jsp"/>    
+       </definition>
+       <definition name="const" extends="main">
+       <put name="BODY" value="const.jsp"/>    
+       </definition>
+       <definition name="ok" extends="main">
+       <put name="BODY" value="afterInstLoginn.jsp"/>   
+       </definition>
+       <definition name="oo" extends="main">
+       <put name="BODY" value="sampleexam.jsp"/>   
+       </definition>
+
+
+  <!--  <definition name=".mainMenu" path="/common/layouts/vboxLayout.jsp" >
+        <putList name="list" >
+            <add value=".menu.links" />
+            <add value=".menu.taglib.references" />
+            <add value=".menu.printer.friendly" />
+            <add value=".menu.old.documents" />
+      </putList>
+    </definition>
+
+    <definition name="aPage" extends=".mainLayout">
+        <put name="title"  value="Another Title" />
+        <put name="body"   value=".aPage.body" />
+    </definition>
+
+  
+
+    <definition name="${YOUR_DEFINITION_HERE}">
+    </definition>
+-->
+</tiles-definitions>

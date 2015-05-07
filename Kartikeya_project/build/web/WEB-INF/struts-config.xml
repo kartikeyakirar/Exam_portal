@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+
+<struts-config>
+    <form-beans>
+        <form-bean name="stuloginBean" type="action_bean.stuloginBean"/>
+        <form-bean name="edetailsBean" type="action_bean.edetailsBean"/>
+        <form-bean name="qdetailBean" type="action_bean.qdetailBean"/>
+        <form-bean name="instSignup" type="action_bean.instSignup"/>
+        <form-bean name="sdetailsbean" type="action_bean.sdetailsbean"/>
+        <form-bean name="qdetails" type="action_bean.qdetails"/>
+        <form-bean name="instloginbean" type="action_bean.instloginbean"/>
+        
+    </form-beans>
+    
+    <global-exceptions>
+    
+    </global-exceptions>
+
+    <global-forwards>
+        <forward name="welcome"  path="/Welcome.do"/>
+    </global-forwards>
+
+    <action-mappings>
+        <action path="/log" forward="main"/>
+        <action path="/Welcome" forward="/welcomeStruts.jsp"/>
+        <action path="/help" forward="1"/>
+        <action path="/desc" forward="2"/>
+        <action path="/rg" forward="6"/>
+        <action path="/cp" forward="4"/>
+        <action path="/home" forward="main"/>
+        <action path="/examlist" forward="ex"/>
+        <action path="/institute" forward="int"/>
+        <action path="/student" forward="stu"/>
+        <action path="/about" forward="ab"/>
+        <action path="/contact" forward="ct"/>
+        <action path="/faq" forward="fu"/>
+        <action path="/instsignup" forward="is"/>
+        <action path="/instlogin" forward="ins"/>
+        <action path="/stulogin" forward="/stulogin.jsp"/>
+        <action path="/sampleexam" forward="oo"/>
+        <action path="/stulogin"  forward="tt"/>
+        <action path="/afterinstlogin" forward="khk"/>
+        <action path="/edetails" forward="edet"/>
+       <action path="/sdetails" forward="sdet"/>
+       <action path="/qdetails" forward="qdet"/>
+       <action path="/const" forward="const"/>
+       
+       
+        
+        <action input="/instsignup.jsp" name="instSignup" path="/instsignupdo" scope="session" type="action_bean.instSignupAction">
+        <forward name="done" path="hjk"/>
+        </action>
+        
+        <action input="/sdetails.jsp" name="sdetailsbean" path="/sdetailsaction" scope="session" type="action_bean.sdetailsAction">
+          <forward name="okkkk" path="ok"/>
+            <forward name="notokkkk" path="ok"/>       
+        </action>
+        <action input="/qdetails.jsp" name="qdetails" path="/afterqdetails" scope="session" type="action_bean.qdeatilAction">
+            <forward name="okkk" path="ok"/>
+            <forward name="notokkk" path="ok"/>  </action>
+        
+        <action input="/instlogin.jsp" name="instloginbean" path="/ila" scope="session" type="action_bean.comp">
+             <forward name="okk" path="ok"/>
+            <forward name="notokk" path="ok"/>
+            </action>
+        <action input="/edetails.jsp" name="edetailsBean" path="/af" scope="session" type="action_bean.edetailsaction">
+           <forward name="oko" path="ok"/>
+            <forward name="onko" path="ok"/>
+           </action>
+        <action input="/stulogin.jsp" name="stuloginBean" path="/sl" scope="session" type="action_bean.stuloginAction"/>
+           
+        <action path="/Welcome" forward="/welcomeStruts.jsp"/>
+    </action-mappings>
+    
+    <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
+
+    <message-resources parameter="com/myapp/struts/ApplicationResource"/>    
+    
+    <!-- ========================= Tiles plugin ===============================-->
+    <!--
+    This plugin initialize Tiles definition factory. This later can takes some
+    parameters explained here after. The plugin first read parameters from
+    web.xml, thenoverload them with parameters defined here. All parameters
+    are optional.
+    The plugin should be declared in each struts-config file.
+    - definitions-config: (optional)
+    Specify configuration file names. There can be several comma
+    separated file names (default: ?? )
+    - moduleAware: (optional - struts1.1)
+    Specify if the Tiles definition factory is module aware. If true
+    (default), there will be one factory for each Struts module.
+    If false, there will be one common factory for all module. In this
+    later case, it is still needed to declare one plugin per module.
+    The factory will be initialized with parameters found in the first
+    initialized plugin (generally the one associated with the default
+    module).
+    true : One factory per module. (default)
+    false : one single shared factory for all modules
+    - definitions-parser-validate: (optional)
+    Specify if xml parser should validate the Tiles configuration file.
+    true : validate. DTD should be specified in file header (default)
+    false : no validation
+
+    Paths found in Tiles definitions are relative to the main context.
+    -->
+    <plug-in className="org.apache.struts.tiles.TilesPlugin" >
+        <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />      
+        <set-property property="moduleAware" value="true" />
+    </plug-in>
+    
+    <!-- ========================= Validator plugin ================================= -->
+    <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+        <set-property
+            property="pathnames"
+            value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+    </plug-in>
+  
+</struts-config>
